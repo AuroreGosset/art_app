@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :artworks
   has_many :bookings
   has_many :booked_artworks, through: :bookings, source: :artwork
+
+  validates :username, :email_adress, :password, presence: true, uniqueness: true
 end
