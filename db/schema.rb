@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_100907) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-=======
->>>>>>> master
   create_table "artworks", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -76,11 +74,8 @@ ActiveRecord::Schema.define(version: 2022_02_22_100907) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-=======
->>>>>>> master
   add_foreign_key "artworks", "users"
   add_foreign_key "bookings", "artworks"
   add_foreign_key "bookings", "users"
