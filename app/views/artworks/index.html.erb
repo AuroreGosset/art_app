@@ -1,1 +1,8 @@
 <h1> Artworks list</h1>
+<ul>
+  <% @artworks.each do |artwork| %>
+    <li><%= artwork.title %></li>
+    <li><%= artwork.price_per_day %></li>
+    <li><%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %></li>
+  <% end %>
+</ul>
