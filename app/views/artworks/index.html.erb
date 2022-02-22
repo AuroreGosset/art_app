@@ -1,1 +1,14 @@
-<h1> Artworks list</h1>
+<h1> Oeuvres disponibles </h1>
+
+<div class="cards-container">
+  <% @artworks.each do |artwork| %>
+  <div class="artwork-card">
+    <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
+    <ul style="list-style: none;">
+      <li><strong><%= artwork.title %></strong></li>
+      <li><%= artwork.price_per_day %>€ par jour</li>
+      <li><a class="btn btn-ghost" href="artwork_path(artwork)">Plus d'informations</a></li>
+    </ul>
+  </div>
+  <% end %>
+</div>
