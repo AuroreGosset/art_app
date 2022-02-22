@@ -19,8 +19,8 @@ end
 user_1 = User.create(email: "auroregosset.pro@gmail.com", password: "mdpmdp1", username: 'TopGirl1') # user 1 pour demo
 user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
 # Artistes pour lien entre home page et artworks -> A intégrer dans 2 artworks
-user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
-user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
+# user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
+# user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
 
 10.times do
   User.create(email: Faker::Internet.email, password: Faker::Internet.password, username: Faker::Internet.username) # user with faker
@@ -68,7 +68,7 @@ artwork_4 = Artwork.new(
   description: "Derrière l'apparente spontanéité de mes œuvres se cache un ajustement mathématique de la construction."
 )
 
-file = get_image("artwork_4.jpeg")
+file = get_image("artwork_4.png")
 artwork_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_4.save!
 
@@ -79,7 +79,7 @@ artwork_5 = Artwork.new(
   description: "La Dolce Vita, la douceur de vivre. Le soleil d'été réchauffe ma peau, les fleurs sur la colline se balancent dans une brise d'été."
 )
 
-file = get_image("artwork_5.jpeg")
+file = get_image("artwork_5.png")
 artwork_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_5.save!
 
@@ -90,7 +90,7 @@ artwork_6 = Artwork.new(
   description: "Intimité est une marine semi-abstraite, peinte à l'huile, à la brosse et au couteau avec des empâtements sur le motif."
 )
 
-file = get_image("artwork_6.jpeg")
+file = get_image("artwork_6.png")
 artwork_6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_6.save!
 
@@ -136,7 +136,7 @@ artwork_10 = Artwork.new(
   description: "Acrylique, Collage sur Bois."
 )
 
-file = get_image("artwork_10.jpeg")
+file = get_image("artwork_10.png")
 artwork_10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_10.save!
 
@@ -147,7 +147,7 @@ artwork_11 = Artwork.new(
   description: "Les nuances de jaune, orange, magenta, rose, bleu, lilas, vert, beige-brun, blanc et noir forment une composition puissante, intense, détaillée et moderne avec une structure claire, presque symétrique."
 )
 
-file = get_image("artwork_11.jpeg")
+file = get_image("artwork_11.png")
 artwork_11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_11.save!
 
@@ -158,8 +158,8 @@ artwork_12 = Artwork.new(
   description: "Une œuvre où le regard se perd dans les nombreux détails. Ecritures mystérieuses et incompréhensibles, des yeux qui observent, des contrastes entre les couleurs et l'épais trait noir qui donne sa structure à cette œuvre."
 )
 
-file = get_image("artwork_12.jpeg")
+file = get_image("artwork_12.png")
 artwork_12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_12.save!
 
-# créer 2 artistes pour home page Simon 
+# créer 2 artistes pour home page Simon
