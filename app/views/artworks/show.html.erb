@@ -1,1 +1,12 @@
-<p>hello</p>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="col-6 artwork-info">
+      <%= cl_image_tag @artwork.photo.key%>
+    </div>
+    <div class="col-6 artwork-info">
+      <h1><%= @artwork.title %></h1>
+      <p><%= @artwork.description %></p>
+      <h2><%= @artwork.price_per_day %></h2>
+    </div>
+  </div>
+</div>
