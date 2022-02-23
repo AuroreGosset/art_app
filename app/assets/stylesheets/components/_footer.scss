@@ -30,7 +30,7 @@
 }
 
 .footer-clean .item.social {
-  text-align:right;
+  text-align:center;
 }
 
 @media (max-width:767px) {
@@ -53,12 +53,9 @@
   line-height:40px;
   display:inline-block;
   text-align:center;
-  border-radius:50%;
-  border:1px solid #ccc;
-  margin-left:10px;
+  margin-left:5px;
   margin-top:22px;
   color:inherit;
-  opacity:0.75;
 }
 
 .footer-clean .item.social > a:hover {
