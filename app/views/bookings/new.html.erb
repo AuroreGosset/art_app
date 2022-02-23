@@ -1,4 +1,7 @@
-<h2>Book a new artwork</h2>
+<h1>Book a new artwork</h1>
+
+<h2><%= @artwork.title %>, <%= @artwork.price_per_day%></h2>
+<p><%= cl_image_tag @artwork.photo.key%></p>
 
 <%= simple_form_for [ @artwork, @booking ] do |f| %>
   <%= f.input :start_date %>
