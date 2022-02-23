@@ -16,8 +16,8 @@ def get_image(image)
   File.open(File.join(File.dirname(__FILE__), "../app/assets/images/#{image}"))
 end
 
-user_1 = User.create(email: "auroregosset.pro@gmail.com", password: "mdpmdp1", username: 'TopGirl1') # user 1 pour demo
-user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
+user_1 = User.create(email: "auroregosset.pro@gmail.com", password: "mdpmdp1", username: 'Girl1') # user 1 pour demo
+user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'Girl2') # user 2 pour demo
 # Artistes pour lien entre home page et artworks -> A intégrer dans 2 artworks
 # user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
 # user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
@@ -29,9 +29,9 @@ end
 # Photos
 artwork_1 = Artwork.new(
   user: user_1,
-  title: "2520 - Mains d'artisan",
+  title: "Les lecteurs du jour",
   price_per_day: 49,
-  description: "Main d'un artisan qui polit de l'ivoire pour en faire une défense."
+  description: "Lecteurs dans la brume de la dalle de la défense, Paris. Photo Noir & Blanc. 65x50"
 )
 
 file = get_image("artwork_1.jpeg")
@@ -40,9 +40,9 @@ artwork_1.save!
 
 artwork_2 = Artwork.new(
   user: user_2,
-  title: "Matthieu Chedid - M",
+  title: "L'immeuble ensoleillé",
   price_per_day: 33,
-  description: "M, Matthieu Chedid Musilac Festival, Aix-les-Bains."
+  description: "Vue sur les fenêtres d'un immeuble de Marseille. Photo Noir & Blanc. 100x100"
 )
 
 file = get_image("artwork_2.jpeg")
@@ -51,55 +51,55 @@ artwork_2.save!
 
 artwork_3 = Artwork.new(
   user: User.all.sample,
-  title: "Lecteurs dans la Brume",
+  title: "Mains d'artisan",
   price_per_day: 52,
-  description: "Lecteurs dans la brume de la dalle de la défense, Paris."
+  description: "Mains travaillant l'ivoire. Photo Noir & Blanc. 75x60"
 )
 
 file = get_image("artwork_3.jpeg")
 artwork_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_3.save!
 
-# peinture
+# abstrait
 artwork_4 = Artwork.new(
   user: User.all.sample,
-  title: "Girl reading a letter at an open window",
+  title: "Strong womens",
   price_per_day: 200,
-  description: "Derrière l'apparente spontanéité de mes œuvres se cache un ajustement mathématique de la construction."
+  description: "Femmes aux couleurs d'été. Peinture acrylique. 55x60"
 )
 
-file = get_image("artwork_4.png")
+file = get_image("artwork_4.jpeg")
 artwork_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_4.save!
 
 artwork_5 = Artwork.new(
   user: User.all.sample,
-  title: "La Dolce Vita - Diptych",
+  title: "Dunes d'automne",
   price_per_day: 50,
-  description: "La Dolce Vita, la douceur de vivre. Le soleil d'été réchauffe ma peau, les fleurs sur la colline se balancent dans une brise d'été."
+  description: "Plage avec des dunes enseillée. Peinture à l'huile. 100x65"
 )
 
-file = get_image("artwork_5.png")
+file = get_image("artwork_5.jpeg")
 artwork_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_5.save!
 
 artwork_6 = Artwork.new(
   user: User.all.sample,
-  title: "Intimité",
+  title: "Graphistérie",
   price_per_day: 60,
-  description: "Intimité est une marine semi-abstraite, peinte à l'huile, à la brosse et au couteau avec des empâtements sur le motif."
+  description: "Abstrait, ronds, carrés, triangles aux couleurs peps. Vinyle. 95x85"
 )
 
-file = get_image("artwork_6.png")
+file = get_image("artwork_6.jpeg")
 artwork_6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_6.save!
 
 # stree art
 artwork_7 = Artwork.new(
   user: User.all.sample,
-  title: "Wiped Out",
+  title: "Folie des cartoons",
   price_per_day: 150,
-  description: "Acrylique et bombe aérosol, de l'artiste JonOne. Année 2021. Datée et signée au dos."
+  description: "Les dessins animés de l'enfance. Peinture acrylique & Bombe aérosol. 110x85"
 )
 
 file = get_image("artwork_7.jpeg")
@@ -108,9 +108,9 @@ artwork_7.save!
 
 artwork_8 = Artwork.new(
   user: User.all.sample,
-  title: "Le doute s'installa",
+  title: "Puzzle fou",
   price_per_day: 95,
-  description: "Pop culture Street-artistes. Oeuvre signée à la main."
+  description: "Pop culture Street-artistes. Peinture acrylique & Bombe aérosol. 65x55"
 )
 
 file = get_image("artwork_8.jpeg")
@@ -119,46 +119,46 @@ artwork_8.save!
 
 artwork_9 = Artwork.new(
   user: User.all.sample,
-  title: "Mon Lisa",
+  title: "Croque-dent",
   price_per_day: 35,
-  description: "Oeuvre aux techniques mixtes incluant sérigraphie, pour le portrait de Mona Lisa, peintures acryliques, pigments dorés appliqués aux pinceaux encres diverses et marqueurs."
+  description: "Ecriture abstraite avec personnages fictifs. Peinture acrylique & Bombe aérosol. 90x90"
 )
 
 file = get_image("artwork_9.jpeg")
 artwork_9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_9.save!
 
-# abstrait
+# peinture
 artwork_10 = Artwork.new(
   user: User.all.sample,
-  title: "Choose For Me",
+  title: "Mer d'été",
   price_per_day: 100,
-  description: "Acrylique, Collage sur Bois."
+  description: "Peinture d'un paysage d'Atlantique. Peinture acrylique, Collage sur Bois. 90x85"
 )
 
-file = get_image("artwork_10.png")
+file = get_image("artwork_10.jpeg")
 artwork_10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_10.save!
 
 artwork_11 = Artwork.new(
   user: User.all.sample,
-  title: "One Of These Days",
+  title: "Womens day",
   price_per_day: 112,
-  description: "Les nuances de jaune, orange, magenta, rose, bleu, lilas, vert, beige-brun, blanc et noir forment une composition puissante, intense, détaillée et moderne avec une structure claire, presque symétrique."
+  description: "Peinture colorée abstraite avec mise en avant de la femme. Peinture acrylique. 100x80"
 )
 
-file = get_image("artwork_11.png")
+file = get_image("artwork_11.jpeg")
 artwork_11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_11.save!
 
 artwork_12 = Artwork.new(
   user: User.all.sample,
-  title: "Urban",
+  title: "Sunset",
   price_per_day: 80,
-  description: "Une œuvre où le regard se perd dans les nombreux détails. Ecritures mystérieuses et incompréhensibles, des yeux qui observent, des contrastes entre les couleurs et l'épais trait noir qui donne sa structure à cette œuvre."
+  description: "Une œuvre où le regard se perd grâce à l'asbtrait et aux couleurs chaudes. Peinture à l'huile. 55x65"
 )
 
-file = get_image("artwork_12.png")
+file = get_image("artwork_12.jpeg")
 artwork_12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_12.save!
 
