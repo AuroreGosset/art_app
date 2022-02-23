@@ -33,3 +33,20 @@ img, svg {
 .btn-ghost:hover {
   opacity: 1;
 }
+
+.big-card {
+  background: whitesmoke;
+  height: 80vh;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .1);
+  overflow: hidden;
+
+  & > div {
+    width: 50%;
+    & img {
+      //height: 80vh;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+}

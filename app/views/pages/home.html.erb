@@ -1,13 +1,25 @@
-
-<div class="banner" style="background-image: url(https://media.giphy.com/media/B77Ols9WChJeMGH9kA/giphy.gif);">
-  <div class="container">
-    <h1>Welcome to Gally</h1> </strong>  <strong>bring artworks at home</strong>!</h1>
-    <p>Change your life and get a new Artworks every week </p>
-    <a class="btn btn-flat" href="#">Decouvrir toutes nos oeuvres</a>
+<div class="container">
+  <div class="big-card d-flex justify-content-between align-items-center">
+    <div class="p-5">
+      <h1><strong>L'art chez vous</strong></h1>
+      <p>Louez des oeuvres d'art pour un jour, un mois, un an. Selon vos envies.</p>
+      <%# <a class="" href="#">Decouvrir toutes nos oeuvres</a> %>
+      <div class="input-group py-3 d-flex">
+        <input type="text" class="btn-ghost form-control" placeholder="Un artiste, un style ou un mot-clé" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <button class="btn-ghost" type="button">Début</button>
+        <button class="btn-ghost" type="button">Fin</button>
+      </div>
+      <div class="input-group-append d-flex justify-content-center mt-3">
+        <button class="btn-yellow-rounded" type="button">Let's Art</button>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1533122250115-6bb28e9a48c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="photo">
+    </div>
   </div>
 </div>
 
-<div class="container ">
+<div class="container">
   <h1>Les différents styles</h1>
   <div class="d-flex justify-content-between">
     <div class="col-3">
@@ -18,40 +30,42 @@
     </div>
     <div class="col-3">
       <div class="gallery-tableau">
-         <%= image_tag "artwork_8.jpeg", alt: "StreetArt" %>
+         <%= image_tag "artwork_7.jpeg", alt: "StreetArt" %>
         <h2 class="desc">StreetArt</h2>
       </div>
     </div>
     <div class="col-3">
       <div class="gallery-tableau">
-        <%= image_tag "artwork_6.png", alt: "Peinture" %>
-        <h2 class="desc">Peinture</h2>
+        <%= image_tag "artwork_12.jpeg", alt: "Peinture" %>
+        <h2 class="desc">Peintures</h2>
       </div>
     </div>
     <div class="col-3">
       <div class="gallery-tableau">
-        <%= image_tag "artwork_11.png", alt: "Abstrait" %>
+        <%= image_tag "artwork_4.jpeg", alt: "Abstrait" %>
         <h2 class="desc">Abstrait</h2>
       </div>
     </div>
   </div>
+
+
   <%# <h1>decouvrir nos oeuvre liens index</h1> %>
 
 
-  <h1>Nos artistes a la une </h1>
+  <%# <h1>Nos artistes a la une </h1>
 
   <div class="d-flex justify-content-between">
     <div class="col-6">
       <div class="gallery-artiste">
          <%= image_tag "artwork_11.png", alt: "Abstrait" %>
-        <h2 class="desc">Picasso </h2>
+        <%# <h2 class="desc">Picasso </h2>
         <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
       </div>
     </div>
     <div class="col-6">
       <div class="gallery-artiste">
          <%= image_tag "artwork_11.png", alt: "Abstrait" %>
-        <h2 class="desc">Picasso </h2>
+        <%# <h2 class="desc">Picasso </h2>
         <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
       </div>
     </div>

@@ -1,0 +1,30 @@
+.search-btn {
+  background: green;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #6b6b6b;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-yellow-rounded {
+  color: #f9fafb;
+  background-color: #e8cb01;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  height: 60px;
+  width: 130px;
+}
