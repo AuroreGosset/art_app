@@ -6,8 +6,10 @@
     <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
     <ul style="list-style: none;">
       <li><strong><%= artwork.title %></strong></li>
-      <li><%= artwork.price_per_day %>€ par jour</li>
-      <li><a class="btn btn-ghost" href="artwork_path(artwork)">Plus d'informations</a></li>
+      <%# <li><%= artwork.category %></li> %>
+      <li>
+        <%= link_to "Découvrir cette oeuvre", artwork_path(artwork), class: "btn btn-ghost" %>
+      </li>
     </ul>
   </div>
   <% end %>
