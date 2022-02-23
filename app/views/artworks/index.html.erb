@@ -3,10 +3,14 @@
 <div class="cards-container">
   <% @artworks.each do |artwork| %>
   <div class="artwork-card">
-    <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
+
+    <div class="artwork-photo-category">
+      <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
+      <span><%= artwork.category %></span>
+    </div>
+
     <ul style="list-style: none;">
       <li><strong><%= artwork.title %></strong></li>
-      <%# <li><%= artwork.category %></li> %>
       <li>
         <%= link_to "Découvrir cette oeuvre", artwork_path(artwork), class: "btn btn-ghost" %>
       </li>
