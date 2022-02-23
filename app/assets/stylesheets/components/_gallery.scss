@@ -1,16 +1,16 @@
 div.gallery-tableau {
   margin: 5px;
-  border: 1px solid #ccc;
 }
 
-div.gallery-tableau:hover {
-  border: 1px solid #777;
-}
+// div.gallery-tableau:hover {
+//   border: 1px solid #777;
+// }
 
 div.gallery-tableau img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8%;
 }
 
 div.desc {
@@ -18,16 +18,16 @@ div.desc {
   text-align: center;
 }
 
-div.gallery-artiste {
-  margin: 5px;
-  border: 1px solid #ccc;
-}
+// div.gallery-artiste {
+//   margin: 5px;
+//   border: 1px solid #ccc;
+// }
 
-div.gallery-artiste:hover {
-  border: 1px solid #777;
-}
+// div.gallery-artiste:hover {
+//   border: 1px solid #777;
+// }
 
-div.gallery-artiste img {
-  width: 100%;
-  height: auto;
-}
+// div.gallery-artiste img {
+//   width: 100%;
+//   height: auto;
+// }
