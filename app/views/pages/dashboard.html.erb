@@ -1,10 +1,29 @@
-<h1>Mes réservations</h1>
-<% if @bookings.length == 0 %>
-  <p>'Vous n'avez pas de réservation en cours !'</p>
-<% else %>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><strong><%= booking.artwork.title %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="container">
+  <div class="big-card d-flex justify-content-between">
+    <div class='p-5'>
+      <h1>Mes réservations</h1>
+      <% if @bookings.length == 0 %>
+        <p>'Vous n'avez pas de réservation en cours !'</p>
+      <% else %>
+        <ul>
+          <% @bookings.each do |booking| %>
+            <li><strong><%= booking.artwork.title %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class='p-5'>
+      <h1>Mes artworks</h1>
+      <% if @user.artworks.length == 0 %>
+        <p>'Vous n'avez pas d'artwork !'</p>
+      <% else %>
+        <ul>
+          <% @user.artworks.each do |artwork| %>
+            <li><strong><%= artwork.title %></strong></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
