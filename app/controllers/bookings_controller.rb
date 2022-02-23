@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def new
     @artwork = Artwork.find(params[:artwork_id])
     @booking = Booking.new

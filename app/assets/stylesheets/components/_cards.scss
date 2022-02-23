@@ -12,6 +12,19 @@
   border-radius: 5px;
 }
 
+.artwork-photo-category {
+  position: relative;
+  span {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: lightgrey;
+    padding: 5px;
+    border-radius: 15px;
+  }
+}
+
+
 img, svg {
   vertical-align: middle;
 }
