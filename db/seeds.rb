@@ -30,6 +30,7 @@ end
 artwork_1 = Artwork.new(
   user: user_1,
   title: "Les lecteurs du jour",
+  category: 'Photos',
   price_per_day: 49,
   description: "Lecteurs dans la brume de la dalle de la défense, Paris. Photo Noir & Blanc. 65x50"
 )
@@ -41,6 +42,7 @@ artwork_1.save!
 artwork_2 = Artwork.new(
   user: user_2,
   title: "L'immeuble ensoleillé",
+  category: 'Photos',
   price_per_day: 33,
   description: "Vue sur les fenêtres d'un immeuble de Marseille. Photo Noir & Blanc. 100x100"
 )
@@ -52,6 +54,7 @@ artwork_2.save!
 artwork_3 = Artwork.new(
   user: User.all.sample,
   title: "Mains d'artisan",
+  category: 'Photos',
   price_per_day: 52,
   description: "Mains travaillant l'ivoire. Photo Noir & Blanc. 75x60"
 )
@@ -64,6 +67,7 @@ artwork_3.save!
 artwork_4 = Artwork.new(
   user: User.all.sample,
   title: "Strong womens",
+  category: 'Abstrait',
   price_per_day: 200,
   description: "Femmes aux couleurs d'été. Peinture acrylique. 55x60"
 )
@@ -75,6 +79,7 @@ artwork_4.save!
 artwork_5 = Artwork.new(
   user: User.all.sample,
   title: "Dunes d'automne",
+  category: 'Abstrait',
   price_per_day: 50,
   description: "Plage avec des dunes enseillée. Peinture à l'huile. 100x65"
 )
@@ -86,6 +91,7 @@ artwork_5.save!
 artwork_6 = Artwork.new(
   user: User.all.sample,
   title: "Graphistérie",
+  category: 'Abstrait',
   price_per_day: 60,
   description: "Abstrait, ronds, carrés, triangles aux couleurs peps. Vinyle. 95x85"
 )
@@ -94,10 +100,11 @@ file = get_image("artwork_6.jpeg")
 artwork_6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_6.save!
 
-# stree art
+# street art
 artwork_7 = Artwork.new(
   user: User.all.sample,
   title: "Folie des cartoons",
+  category: 'Street Art',
   price_per_day: 150,
   description: "Les dessins animés de l'enfance. Peinture acrylique & Bombe aérosol. 110x85"
 )
@@ -109,6 +116,7 @@ artwork_7.save!
 artwork_8 = Artwork.new(
   user: User.all.sample,
   title: "Puzzle fou",
+  category: 'Street Art',
   price_per_day: 95,
   description: "Pop culture Street-artistes. Peinture acrylique & Bombe aérosol. 65x55"
 )
@@ -120,6 +128,7 @@ artwork_8.save!
 artwork_9 = Artwork.new(
   user: User.all.sample,
   title: "Croque-dent",
+  category: 'Street Art',
   price_per_day: 35,
   description: "Ecriture abstraite avec personnages fictifs. Peinture acrylique & Bombe aérosol. 90x90"
 )
@@ -132,6 +141,7 @@ artwork_9.save!
 artwork_10 = Artwork.new(
   user: User.all.sample,
   title: "Mer d'été",
+  category: 'Peinture',
   price_per_day: 100,
   description: "Peinture d'un paysage d'Atlantique. Peinture acrylique, Collage sur Bois. 90x85"
 )
@@ -143,6 +153,7 @@ artwork_10.save!
 artwork_11 = Artwork.new(
   user: User.all.sample,
   title: "Womens day",
+  category: 'Peinture',
   price_per_day: 112,
   description: "Peinture colorée abstraite avec mise en avant de la femme. Peinture acrylique. 100x80"
 )
@@ -154,6 +165,7 @@ artwork_11.save!
 artwork_12 = Artwork.new(
   user: User.all.sample,
   title: "Sunset",
+  category: 'Peinture',
   price_per_day: 80,
   description: "Une œuvre où le regard se perd grâce à l'asbtrait et aux couleurs chaudes. Peinture à l'huile. 55x65"
 )
