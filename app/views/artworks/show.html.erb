@@ -1,13 +1,36 @@
 <div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="col-6 artwork-info">
+  <div class="big-card d-flex justify-content-between align-items-center">
+    <div class="p-5">
       <%= cl_image_tag @artwork.photo.key%>
     </div>
-    <div class="col-6 artwork-info">
-      <h1><%= @artwork.title %></h1>
-      <p><%= @artwork.description %></p>
-      <h2><%= @artwork.price_per_day %></h2>
-      <%= link_to "Réserver cette oeuvre", new_artwork_booking_path(@artwork), class: "btn btn-ghost" %>
+    <div class="input-group-append d-flex justify-content-center mt-3">
+      <button class="btn-yellow-rounded" type="button">Booker cette oeuvre</button>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1533122250115-6bb28e9a48c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="photo">
     </div>
   </div>
 </div>
+
+
+<h1><strong>L'art chez vous</strong></h1>
+      <p>Louez des oeuvres d'art pour un jour, un mois, un an. Selon vos envies.</p>
+      <div class="input-group py-3 d-flex">
+        <input type="text" class="btn-ghost form-control" placeholder="Un artiste, un style ou un mot-clé" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <button class="btn-ghost" type="button">Début</button>
+        <button class="btn-ghost" type="button">Fin</button>
+
+<%# <div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="col-6 artwork-info">
+      <%= cl_image_tag @artwork.photo.key%>
+    <%# </div>
+    <div class="col-6 artwork-info">
+      <h1><%= @artwork.title %>
+      <%# <p><%= @artwork.description</p> %>
+      <%# <h2><%= @artwork.price_per_day</h2> %>
+      <%# <%= link_to "Réserver cette oeuvre", new_artwork_booking_path(@artwork), class: "btn btn-ghost" %>
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
