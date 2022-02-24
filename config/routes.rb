@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :artworks do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'pages#dashboard'
 end
