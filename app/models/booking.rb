@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :artwork
   belongs_to :user
 
-  validates :start_date, :end_date, :price, presence: true
+  validates :start_date, :end_date, :price, :status, presence: true
 
   before_validation :set_price
 

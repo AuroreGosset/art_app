@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @artwork = Artwork.find(params[:artwork_id])
     @booking.artwork = @artwork
     @booking.user = current_user
+    @booking.status = "En attente"
 
     if @booking.save!
       redirect_to dashboard_path
@@ -17,9 +18,32 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accepted
+    @booking = Booking.find(params[:artwork_id])
+    @booking.status = "approved"
+   if @booking.save
+     flash[:success] = "Vous avez accepté cette réservation !"
+   end
+   redirect_to dashboard_path
+  end
+
+  def rejected
+    @booking = Booking.find(params[:artwork_id])
+    @booking.status = "rejected"
+    if @booking.save
+      flash[:error] = "Vous avez refusé cette réservation."
+    end
+    redirect_to dashboard_path
+  end
+
+  def cancelled
+    @booking = Booking.find(params[:artwork_id])
+
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

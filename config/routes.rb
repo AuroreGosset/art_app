@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   resources :artworks do
-    resources :bookings, only: [:new, :create]
+    resources :bookings do
+      member do
+        patch '/accepted', to: 'bookings#accepted'
+        patch '/denied', to: 'bookings#denied'
+        patch '/cancelled', to: 'bookings#cancelled'
+      end
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'pages#dashboard'
