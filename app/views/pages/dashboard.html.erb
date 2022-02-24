@@ -7,20 +7,21 @@
       <% else %>
         <ul>
           <% @bookings.each do |booking| %>
-            <li><strong><%= booking.artwork.title %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></li>
+            <li><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></li>
           <% end %>
         </ul>
       <% end %>
     </div>
 
     <div class='p-5'>
-      <h1>Mes artworks</h1>
+      <h1>Mes oeuvres</h1>
       <% if @user.artworks.length == 0 %>
-        <p>'Vous n'avez pas d'artwork !'</p>
+        <p>'Vous n'avez pas d'oeuvres à louer pour le moment !'</p>
       <% else %>
         <ul>
           <% @user.artworks.each do |artwork| %>
-            <li><strong><%= artwork.title %></strong></li>
+            <li><strong><%= link_to artwork.title, artwork_path(artwork) %></strong></li>
+
           <% end %>
         </ul>
       <% end %>

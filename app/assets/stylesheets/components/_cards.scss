@@ -9,6 +9,10 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin: 15px;
   border-radius: 5px;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .artwork-photo-category {
