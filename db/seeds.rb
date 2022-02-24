@@ -16,16 +16,24 @@ def get_image(image)
   File.open(File.join(File.dirname(__FILE__), "../app/assets/images/#{image}"))
 end
 
-user_1 = User.create(email: "auroregosset.pro@gmail.com", password: "mdpmdp1") # user 1 pour demo
-user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2") # user 2 pour demo
+puts 'creating users'
+user_1 = User.create(username: "aurore", email: "auroregosset.pro@gmail.com", password: "mdpmdp1") # user 1 pour demo
+puts 'created Aurore'
+user_2 = User.create(username: "caro", email: "caroline.m.dana@gmail.com", password: "mdpmdp2") # user 2 pour demo
+puts 'created Caro'
 # Artistes pour lien entre home page et artworks -> A intégrer dans 2 artworks
 # user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
 # user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
 
+
 10.times do
-  User.create(email: Faker::Internet.email, password: Faker::Internet.password) # user with faker
+  User.create(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password) # user with faker
+  puts 'created 1 user'
 end
 
+puts "created #{User.count} users"
+
+puts 'seeding artworks'
 # Photos
 artwork_1 = Artwork.new(
   user: user_1,
@@ -185,3 +193,5 @@ artwork_12 = Artwork.new(
 file = get_image("artwork_12.jpeg")
 artwork_12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_12.save!
+
+puts "created #{Artwork.count}"
