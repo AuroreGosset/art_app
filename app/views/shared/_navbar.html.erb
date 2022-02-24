@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-lewagon px-3 py-3 mb-3">
   <div class="container-fluid">
-    <h2><strong>Gally.</strong></h2>
+    <h2><strong><%= link_to "Gally", root_path, class: "text-decoration-none" %></strong></h2>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,8 +11,8 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/93728030?v=4" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Mon profil</a>
-              <a class="dropdown-item" href="#">Créer une annonce</a>
+              <%= link_to "Mon profil", root_path, class:"dropdown-item" %>
+              <%= link_to "Créer une annonce", root_path, class:"dropdown-item" %>
             </div>
           </li>
       </ul>
