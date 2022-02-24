@@ -21,6 +21,14 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    @artwork = Artwork.find(params[:id])
+    @artwork.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to dashboard_path
+  end
+
   private
 
   def artwork_params
