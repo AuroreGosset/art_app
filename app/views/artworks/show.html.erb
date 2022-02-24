@@ -1,14 +1,18 @@
-<div class="container">
+<div class="container ">
   <div class="big-card d-flex justify-content-between align-items-center">
     <div class="">
-      <%= cl_image_tag @artwork.photo.key%>
+      <%= cl_image_tag @artwork.photo.key %>
     </div>
-    <div class="p-5">
-     <h1><strong><%= @artwork.title %></strong></h1>
-      <p><strong><%= @artwork.price_per_day %>€ par jour</strong></p>
+    <div class="p-5" style="position: relative;">
+      <%=link_to artworks_path, class: "grey-arrow" do%>
+      <i class="fa-solid fa-arrow-left"></i>
+      <%end%>
+      <h1><strong><%= @artwork.title %></strong></h1>
+      <p><strong><%=@artwork.price_per_day%>€</strong> / jour</p>
       <p><%= @artwork.description %></p>
+
       <div data-controller="reveal">
-        <div class="d-flex justify-content-center mt-3">
+        <div class="d-flex mt-3 justify-content-center">
           <%= button_tag "Consulter les dates disponibles", class: "btn btn-ghost", data: { action: 'click->reveal#show' } %>
         </div>
 
@@ -16,10 +20,13 @@
           <%= simple_form_for [ @artwork, Booking.new ] do |f| %>
             <%= f.input :start_date %>
             <%= f.input :end_date %>
-            <%= f.submit "Réserver cette oeuvre", class: "btn btn-ghost" %>
+          <div class= "d-flex mt-3 justify-content-center" >
+            <%= f.submit "Réserver cette oeuvre", class: "btn-pink-rounded"%>
           <% end %>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
