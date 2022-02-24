@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="big-card d-flex justify-content-between">
+    <div class='p-5'>
+      <h1>Photo de l'artiste</h1>
+      <h1><strong><%= @user.username %></strong></h1>
+      <p>Description</p>
+    </div>
+    <%#= cl_image_path user.artworks.first.photo.key %>
+    <div class='p-5'>
+      <%=cl_image_tag @user.artworks.first.photo.key, height: 200, width: 400, crop: :fill%>
+    </div>
+  </div>
+</div>

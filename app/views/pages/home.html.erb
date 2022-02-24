@@ -47,16 +47,13 @@
 
 <div class="container mt-5">
     <h1 class="mb-5">Top artistes de la semaine</h1>
-  <div class="card-grid-artiste">
-    <%= link_to artworks_path do %>
-      <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/w-i-l-l-p-o-w-e-r-vlad-bubnov.jpg)">
-      <div class= 'text-center'>Name</div>
-      </div>
-    <% end %>
-    <%= link_to artworks_path do %>
-      <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.artmajeur.com/medias/standard/j/y/jyrendo/artwork/11637314_streetart-vs-figurativeart-80x60-cm.jpg)">
-      <div class= 'text-center'>Name</div>
-      </div>
-    <% end %>
+    <div class="card-grid-artiste">
+        <% @users.each do |user| %>
+        <%= link_to user_path(user) do%>
+       <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path user.artworks.first.photo.key%>)">
+       <div class= 'text-center'><%= user.username %></div>
+        </div>
+      <% end %>
+    <%end%>
   </div>
 </div>
