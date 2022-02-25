@@ -43,7 +43,6 @@
                 <p class="mb-3"><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
                 <%= link_to "Accepter", accepted_booking_path(booking), method: :patch, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong>
                 <%= link_to "Refuser", rejected_booking_path(booking), method: :patch, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong>
-
               </div>
             </div>
           <% end %>
@@ -55,13 +54,11 @@
               <div class="card-product-infos">
                 <h5><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong></h5>
                 <p><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
-
                 <p><strong><%= booking.status %></strong></p>
               </div>
             </div>
           <% end %>
         <% end %>
-
       <% end %>
     </div>
   </div>
