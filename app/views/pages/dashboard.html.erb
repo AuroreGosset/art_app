@@ -1,5 +1,8 @@
 <div class="container">
-  <div class="big-card d-flex justify-content-between">
+  <div class="big-card">
+    <div class="user-profile-card">
+      <img id="avatar-profil" class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/93728030?v=4"/><h3> <%= @user.username  %></h3>
+    <div class="big-card d-flex justify-content-between">
     <div class='p-5'>
       <h1>Mes réservations</h1>
       <% if @bookings.length == 0 %>
@@ -18,8 +21,26 @@
           <% end %>
       <% end %>
     </div>
+    <div class="d-flex justify-content-between">
+      <div class='p-5'>
+        <h1>Mes réservations</h1>
+        <% if @bookings.length == 0 %>
+          <p>'Vous n'avez pas de réservation en cours !'</p>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <div class="card-product my-3">
+              <%= cl_image_tag booking.artwork.photo.key %>
+              <div class="card-product-infos">
+                <h5><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong></h5>
+                <p><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
+                <p><%= link_to "Annuler", booking_path(booking), method: :delete, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong></p>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
 
-    <div class='p-5'>
+      <div class='p-5'>
       <h1>Mes oeuvres</h1>
       <% if @user.artworks.length == 0 %>
         <p>'Vous n'avez pas d'oeuvres à louer pour le moment !'</p>
@@ -60,6 +81,7 @@
           <% end %>
         <% end %>
       <% end %>
-    </div>
+      </div>
+      </div>
   </div>
 </div>

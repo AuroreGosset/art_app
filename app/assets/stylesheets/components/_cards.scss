@@ -65,11 +65,15 @@ img, svg {
 
   & > div {
     width: 50%;
-    & img {
+      img {
       height: 80vh;
       max-width: 100%;
       object-fit: cover;
       overflow: hidden;
+      &#avatar-profil {
+       height: 40px;
+       border-radius: 50%;
+      }
     }
   }
 }
@@ -178,10 +182,17 @@ img, svg {
 }
 
 .artist-card-description{
-  padding:0 100px;
+  padding: 0 100px;
+  margin: 1px -2px;
 }
 
 .flexbox-artist{
     display: flex;
     justify-content: space-evenly;
   }
+
+.user-profile-card {
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: -24px;
+}
