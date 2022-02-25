@@ -14,9 +14,9 @@
 
 .btn-yellow-rounded {
   color: #f9fafb;
-  background-color: #f2bc0a;
+  background-color: #ffd200;
   border: none;
-  padding: 15px 50px;
+  padding: 20px 60px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
@@ -45,4 +45,14 @@
 
 .grey-arrow:hover {
   color: black;
+}
+
+.btn-outline-secondary {
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+.form-control {
+  border-radius: 50px;
+  padding: 10px 20px;
 }

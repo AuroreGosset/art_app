@@ -21,10 +21,6 @@ user_1 = User.create(username: "aurore", email: "auroregosset.pro@gmail.com", pa
 puts 'created Aurore'
 user_2 = User.create(username: "caro", email: "caroline.m.dana@gmail.com", password: "mdpmdp2") # user 2 pour demo
 puts 'created Caro'
-# Artistes pour lien entre home page et artworks -> A intégrer dans 2 artworks
-# user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
-# user_2 = User.create(email: "caroline.m.dana@gmail.com", password: "mdpmdp2", username: 'TopGirl2') # user 2 pour demo
-
 
 10.times do
   User.create(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password) # user with faker
@@ -34,83 +30,83 @@ end
 puts "created #{User.count} users"
 
 puts 'seeding artworks'
-# Photos
-artwork_1 = Artwork.new(
-  user: user_1,
-  username: "PopCorn",
-  title: "Lecteurs d'un jour",
-  category: 'Photos',
-  price_per_day: 49,
-  description: "Lecteurs dans la brume de la dalle de la défense, Paris. Photo Noir & Blanc. 65x50"
-)
-
-file = get_image("artwork_1.jpeg")
-artwork_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork_1.save!
-
-artwork_2 = Artwork.new(
-  user: user_2,
-  username: "Enilorac",
-  title: "L'immeuble ensoleillé",
-  category: 'Photos',
-  price_per_day: 33,
-  description: "Vue sur les fenêtres d'un immeuble de Marseille. Photo Noir & Blanc. 100x100"
-)
-
-file = get_image("artwork_2.jpeg")
-artwork_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork_2.save!
-
-artwork_3 = Artwork.new(
-  user: User.all.sample,
-  username: "Nomis",
-  title: "Mains d'artisan",
-  category: 'Photos',
-  price_per_day: 52,
-  description: "Mains travaillant l'ivoire. Photo Noir & Blanc. 75x60"
-)
-
-file = get_image("artwork_3.jpeg")
-artwork_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork_3.save!
-
 # abstrait
-artwork_4 = Artwork.new(
+artwork_1 = Artwork.new(
   user: User.all.sample,
   username: "Erorua",
   title: "Strong womens",
   category: 'Abstrait',
   price_per_day: 200,
-  description: "Femmes aux couleurs d'été. Peinture acrylique. 55x60"
+  description: "Abstrait - Femmes aux couleurs d'été - 55x60"
 )
 
 file = get_image("artwork_4.jpeg")
-artwork_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork_4.save!
+artwork_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork_1.save!
 
-artwork_5 = Artwork.new(
+artwork_2 = Artwork.new(
   user: User.all.sample,
   username: "Naoif",
   title: "Dunes d'automne",
   category: 'Abstrait',
   price_per_day: 50,
-  description: "Plage avec des dunes enseillée. Peinture à l'huile. 100x65"
+  description: "Abstrait - Plage aux dunes enseillées - 100x65"
 )
 
 file = get_image("artwork_5.jpeg")
-artwork_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-artwork_5.save!
+artwork_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork_2.save!
 
-artwork_6 = Artwork.new(
+artwork_3 = Artwork.new(
   user: User.all.sample,
   username: "Mona",
   title: "Graphistérie",
   category: 'Abstrait',
   price_per_day: 60,
-  description: "Abstrait, ronds, carrés, triangles aux couleurs peps. Vinyle. 95x85"
+  description: "Abstrait - Asymétrie de ronds, carrés, triangles aux couleurs peps - 95x85"
 )
 
 file = get_image("artwork_6.jpeg")
+artwork_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork_3.save!
+
+# photo
+artwork_4 = Artwork.new(
+  user: user_1,
+  username: "PopCorn",
+  title: "Lecteurs d'un jour",
+  category: 'Photos',
+  price_per_day: 49,
+  description: "Photo - Lecteurs dans la brume de la dalle de la défense, Paris - 65x50"
+)
+
+file = get_image("artwork_1.jpeg")
+artwork_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork_4.save!
+
+artwork_5 = Artwork.new(
+  user: user_2,
+  username: "Enilorac",
+  title: "L'immeuble ensoleillé",
+  category: 'Photos',
+  price_per_day: 33,
+  description: "Photo - Vue sur les fenêtres d'un immeuble de Marseille - 100x100"
+)
+
+file = get_image("artwork_2.jpeg")
+artwork_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+artwork_5.save!
+
+artwork_6 = Artwork.new(
+  user: User.all.sample,
+  username: "Nomis",
+  title: "Mains d'artisan",
+  category: 'Photos',
+  price_per_day: 52,
+  description: "Photo - Mains travaillant l'ivoire - 75x60"
+)
+
+file = get_image("artwork_3.jpeg")
 artwork_6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 artwork_6.save!
 
@@ -121,7 +117,7 @@ artwork_7 = Artwork.new(
   title: "Folie des cartoons",
   category: 'Street Art',
   price_per_day: 150,
-  description: "Les dessins animés de l'enfance. Peinture acrylique & Bombe aérosol. 110x85"
+  description: "Street Art - Les dessins animés de l'enfance - 110x85"
 )
 
 file = get_image("artwork_7.jpeg")
@@ -134,7 +130,7 @@ artwork_8 = Artwork.new(
   title: "Puzzle fou",
   category: 'Street Art',
   price_per_day: 95,
-  description: "Pop culture Street-artistes. Peinture acrylique & Bombe aérosol. 65x55"
+  description: "Street Art - Mise en avant de la Pop culture, utilisation de la bombe aérosole - 65x55"
 )
 
 file = get_image("artwork_8.jpeg")
@@ -147,7 +143,7 @@ artwork_9 = Artwork.new(
   title: "Croque-dent",
   category: 'Street Art',
   price_per_day: 35,
-  description: "Ecriture abstraite avec personnages fictifs. Peinture acrylique & Bombe aérosol. 90x90"
+  description: "Street Art - Ecriture avec personnages fictifs, utilisation bombe aérosole - 90x90"
 )
 
 file = get_image("artwork_9.jpeg")
@@ -161,7 +157,7 @@ artwork_10 = Artwork.new(
   title: "Mer d'été",
   category: 'Peinture',
   price_per_day: 100,
-  description: "Peinture d'un paysage d'Atlantique. Peinture acrylique, Collage sur Bois. 90x85"
+  description: "Peinture - Paysage d'Atlantique avec collage sur Bois - 90x85"
 )
 
 file = get_image("artwork_10.jpeg")
@@ -170,11 +166,11 @@ artwork_10.save!
 
 artwork_11 = Artwork.new(
   user: User.all.sample,
-  username: "Yayoi",
+  username: "Caroline Dana",
   title: "Womens day",
   category: 'Peinture',
   price_per_day: 112,
-  description: "Peinture colorée abstraite avec mise en avant de la femme. Peinture acrylique. 100x80"
+  description: "Peinture - Nature colorée et mise en avant de la femme - 100x80"
 )
 
 file = get_image("artwork_11.jpeg")
@@ -187,7 +183,7 @@ artwork_12 = Artwork.new(
   title: "Sunset",
   category: 'Peinture',
   price_per_day: 80,
-  description: "Une œuvre où le regard se perd grâce à l'asbtrait et aux couleurs chaudes. Peinture à l'huile. 55x65"
+  description: "Peinture - Eté indien aux couleurs oranges et rouges chaudes - 55x65"
 )
 
 file = get_image("artwork_12.jpeg")
