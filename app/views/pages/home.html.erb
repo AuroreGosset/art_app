@@ -59,12 +59,29 @@
 <div class="container mt-5">
     <h1 class="mb-5">Top artistes de la semaine</h1>
     <div class="card-grid-artiste">
-        <% @users.each do |user| %>
-        <%= link_to user_path(user) do%>
-       <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path user.artworks.first.photo.key%>)">
-       <div class= 'text-center'><%= user.username %></div>
+      <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.catawiki.nl/assets/2020/4/27/1/9/e/19eaaa07-5b10-43fa-93be-90778bbd1eb3.jpg)">
+      <span data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">Alexander Calder</span>
+      </div>
+      <div class="card-category-artiste" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://sothebys-com.brightspotcdn.com/e2/64/1a594a2b46939614e83b8ee5e79f/marlene-dumas-artist-portrait.jpg)">Marlène Dumas
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <h1>Alexander Calder</h1>
+        <h6 class="mb-3">Peintre</h6>
+        <p style="text-align: justify;">Peintre américain, né le 22 juillet 1898 à Lawnton et mort le 11 novembre 1976 à New York. Il est surtout connu pour ses mobiles ainsi nommés sur proposition de Marcel Duchamp lors de leur exposition à Paris en 1932 à la galerie Vignon, ses assemblages de formes animées par les mouvements de l'air, puis ses stabiles.</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <img class="rounded" style="max-width: 130px; height: 200px; object-fit: cover;" src="https://images.unsplash.com/photo-1559102877-4a2cc0e37fce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+          <img class="rounded" style="max-width: 130px; height: 200px; object-fit: cover;" src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+          <img class="rounded" style="max-width: 130px; height: 200px; object-fit: cover;" src="https://images.unsplash.com/photo-1602188324312-e1cd6383d2fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzR8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
         </div>
-      <% end %>
-    <%end%>
+      </div>
+
+    </div>
   </div>
 </div>
