@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_130450) do
     t.date "start_date"
     t.date "end_date"
     t.integer "price"
-    t.string "status", default: "En attente"
+    t.string "status"
     t.integer "total_price"
     t.index ["artwork_id"], name: "index_bookings_on_artwork_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
