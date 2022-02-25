@@ -1,13 +1,21 @@
 <div class="container">
-  <div class="big-card d-flex justify-content-between">
+  <div class="artist-card">
     <div class='p-5'>
-      <h1>Photo de l'artiste</h1>
-      <h1><strong><%= @user.username %></strong></h1>
-      <p>Description</p>
+      <img class="avatar-artist"src="https://kitt.lewagon.com/placeholder/users/simonde24" />
+      <strong><%= @user.username %></strong>
     </div>
-    <%#= cl_image_path user.artworks.first.photo.key %>
-    <div class='p-5'>
-      <%=cl_image_tag @user.artworks.first.photo.key, height: 200, width: 400, crop: :fill%>
+    <div>
+      <p class="artist-card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum totam ut ducimus asperiores tempora fuga quos molestias et velit, ipsa nulla doloribus laboriosam tenetur similique facilis fugiat dolor tempore maiores.</p>
+    </div>
+
+  <div class="container mt-3">
+    <div class = "card-grid-profile">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://media.istockphoto.com/photos/old-paint-with-rust-picture-id1016032032?b=1&k=20&m=1016032032&s=170667a&w=0&h=Iv6Q7Ntl2qbKkji_XmgAMkUjtWKt4ixV0jMqxrzKnKM=)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1496504175726-c7b4523c7e81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlaW50dXJlJTIwYWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVpbnR1cmUlMjB2ZXJ0ZSUyMGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+      </div>
     </div>
   </div>
 </div>
