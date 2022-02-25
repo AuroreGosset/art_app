@@ -21,6 +21,7 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
 .btn-ghost-dashboard:focus {
   color: #f9fafb;
   background-color: #f2bc0a;
@@ -28,6 +29,16 @@
   padding: 5px 15px;
   border-radius: 50px;
   font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-show {
+  color: #4A4A4A;
+  border: 1px solid #6b6b6b;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
@@ -39,6 +50,18 @@
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
+  // height: 60px;
+  // width: 230px;
+}
+
+.btn-yellow-rounded:hover {
+  color: #f9fafb;
+  background-color: #f2bc0a;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.8s ease;
   // height: 60px;
   // width: 230px;
 }
