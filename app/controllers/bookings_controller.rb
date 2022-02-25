@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.artwork = @artwork
     @booking.user = current_user
     @booking.status = "En attente"
+    @booking.total_price = booking_price(@booking)
 
     if @booking.save!
       redirect_to dashboard_path
@@ -55,5 +56,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :status)
+  end
+
+  def booking_price(booking)
+    ((booking.end_date.to_date - booking.start_date.to_date).to_i) * booking.artwork.price_per_day
   end
 end

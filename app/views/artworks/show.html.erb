@@ -14,16 +14,16 @@
       <p><%= @artwork.description %></p>
 
       <div data-controller="reveal">
-        <div class="d-flex mt-3 justify-content-center">
+        <div class="d-flex mt-4 mb-4 justify-content-center">
           <%= button_tag "Consulter les disponibilités", class: "btn-ghost-show", data: { action: 'click->reveal#show' } %>
         </div>
 
         <div data-reveal-target="form" class="d-none">
           <%= simple_form_for [ @artwork, Booking.new ] do |f| %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
+            <%= f.input :start_date, label: "Date de début" %>
+            <%= f.input :end_date, label: "Date de fin" %>
           <div class= "d-flex mt-3 justify-content-center" >
-            <%= f.submit "Réserver cette oeuvre", class: "btn-yellow-rounded"%>
+            <%= f.submit "Réserver cette oeuvre", class: "btn-yellow-rounded mt-5"%>
           <% end %>
           </div>
         </div>

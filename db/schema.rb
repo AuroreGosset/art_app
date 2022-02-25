@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_160458) do
+ActiveRecord::Schema.define(version: 2022_02_25_130450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,8 @@ ActiveRecord::Schema.define(version: 2022_02_24_160458) do
     t.date "start_date"
     t.date "end_date"
     t.integer "price"
-    t.string "status"
+    t.string "status", default: "En attente"
+    t.integer "total_price"
     t.index ["artwork_id"], name: "index_bookings_on_artwork_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

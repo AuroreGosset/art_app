@@ -44,7 +44,7 @@
 
 .btn-yellow-rounded {
   color: #f9fafb;
-  background-color: #ffd200;
+  background-color: #fdd008;
   border: none;
   padding: 20px 60px;
   border-radius: 50px;
@@ -56,14 +56,8 @@
 
 .btn-yellow-rounded:hover {
   color: #f9fafb;
-  background-color: #f2bc0a;
-  border: none;
-  padding: 15px 50px;
-  border-radius: 50px;
-  font-weight: lighter;
-  transition: opacity 0.8s ease;
-  // height: 60px;
-  // width: 230px;
+  background-color: #fdd008ce;
+  transition: 0.5s ease;
 }
 
 .btn-pink-rounded {
