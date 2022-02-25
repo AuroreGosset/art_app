@@ -1,27 +1,30 @@
 <div class="container">
   <div class="big-card d-flex justify-content-between align-items-center">
     <div class="p-5">
-      <h1><strong>L'art chez vous</strong></h1>
-      <p>Louez des oeuvres d'art pour un jour, un mois, un an. Selon vos envies.</p>
-      <div class="input-group py-3 d-flex">
-        <%= simple_form_for :search, url: artworks_path, method: :get do |f|  %>
-          <%= f.input :query, label: 'quel style', placeholder: 'Un artiste, un style ou un mot-clé' %>
-          <%#= f.input :start_date, as: :date %>
-          <%#= f.input :end_date, as: :date %>
-          <%= f.submit %>
+      <h1 class="title mb-4"><strong>L'art chez vous</strong></h1>
+      <h6>Louez des oeuvres d'art pour un jour, un mois, un an.</h6>
+      <h6>Selon vos envies.</h6>
+      <div class="py-3">
+        <%= simple_form_for :search, url: artworks_path, method: :get, html: {class: 'form-inline' } do |f|  %>
+          <div class="d-flex justify-content-between align-items-end mt-3">
+            <div class="w-100">
+              <%= f.input :query, label: false, placeholder: 'Recherchez un style, un artiste...', class: "form-control" %>
+            </div>
+            <%= f.submit class: "btn btn-outline-secondary mb-3 ms-2" %>
+          </div>
         <% end %>
-        <%# <input type="text" class="btn-ghost form-control" placeholder="Un artiste, un style ou un mot-clé" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <%# <% <input type="text" class="btn-ghost form-control" placeholder="Un artiste, un style ou un mot-clé" aria-label="Recipient's username" aria-describedby="basic-addon2">
         <button class="btn-ghost" type="button">Début</button>
         <button class="btn-ghost" type="button">Fin</button> %>
       </div>
       <div class="input-group-append d-flex justify-content-center mt-3">
       <%=link_to artworks_path do%>
-       <button class="btn-yellow-rounded" type="button">Let's Art</button>
+       <button class="btn-yellow-rounded" type="button">Toutes nos oeuvres</button>
        <%end%>
       </div>
     </div>
     <div>
-      <img src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="photo">
+      <img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80" alt="photo">
     </div>
   </div>
 </div>
