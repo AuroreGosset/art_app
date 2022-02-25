@@ -1,4 +1,14 @@
-<h1 class="text-center"> Oeuvres disponibles (<%=@artworks.size %>)</h1>
+<h1 class="text-center m-5"> Oeuvres disponibles (<%= @artworks.size %>)</h1>
+
+  <p class='anchor text-center mt-5'>
+  <strong>
+    <%= link_to "Abstrait", artworks_path(anchor: "artwork-#{Artwork.where(category: 'Abstrait').first.id}"), class: "anchor text-decoration-none mx-5" %>
+    <%= link_to "Photos", artworks_path(anchor: "artwork-#{Artwork.where(category: 'Photos').first.id}"), class: "anchor text-decoration-none mx-5" %>
+    <%= link_to "Street Art", artworks_path(anchor: "artwork-#{Artwork.where(category: 'Street Art').first.id}"), class: "anchor text-decoration-none mx-5" %>
+    <%= link_to "Peinture", artworks_path(anchor: "artwork-#{Artwork.where(category: 'Peinture').first.id}"), class: "anchor text-decoration-none mx-5" %>
+    <hr>
+  </strong>
+  </p>
 
 <div class="cards-container">
   <% @artworks.each do |artwork| %>
@@ -7,7 +17,7 @@
 
       <div class="artwork-photo-category">
         <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
-        <span><%= artwork.category %></span>
+        <span id="artwork-<%= artwork.id %>"> <%= artwork.category %> </span>
       </div>
 
       <ul style="list-style: none;padding: 15px;margin: 20px 0;">
