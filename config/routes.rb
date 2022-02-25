@@ -3,12 +3,14 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   resources :artworks do
-    resources :bookings do
-      member do
-        patch '/accepted', to: 'bookings#accepted'
-        patch '/denied', to: 'bookings#denied'
-        patch '/cancelled', to: 'bookings#cancelled'
-      end
+    resources :bookings
+  end
+
+  resources :bookings do
+    member do
+      patch '/accepted', to: 'bookings#accepted'
+      patch '/rejected', to: 'bookings#rejected'
+      patch '/cancelled', to: 'bookings#cancelled'
     end
   end
 
