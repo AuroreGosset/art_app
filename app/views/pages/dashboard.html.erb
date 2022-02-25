@@ -11,28 +11,57 @@
               <div class="card-product-infos">
                 <h5><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong></h5>
                 <p><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
-                <p><%= link_to "Supprimer ", artwork_path(booking), method: :delete, data: { confirm: "Are you sure?" } %></strong></p>
+                <p><%= booking.total_price %>€</p>
+                <p><%= link_to "Annuler", booking_path(booking), method: :delete, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong></p>
               </div>
             </div>
           <% end %>
       <% end %>
     </div>
-    
+
     <div class='p-5'>
       <h1>Mes oeuvres</h1>
       <% if @user.artworks.length == 0 %>
         <p>'Vous n'avez pas d'oeuvres à louer pour le moment !'</p>
       <% else %>
-        <% @user.artworks.each do |artwork| %>
-          <div class="card-product my-3">
-            <%= cl_image_tag artwork.photo.key %>
-            <div class="card-product-infos">
-              <h5><strong><%= link_to artwork.title, artwork_path(artwork) %></strong></h5>
-              <strong><p><%= link_to artwork.description, artwork_path(artwork) %></strong></p>
-              <p><%= link_to "Supprimer ", artwork_path(artwork), method: :delete, data: { confirm: "Are you sure?" } %></strong></p>
+        <%# <% @user.artworks.each do |artwork| %>
+          <%# <div class="card-product my-3"> %>
+            <%# <%= cl_image_tag artwork.photo.key %>
+            <%# <div class="card-product-infos"> %>
+              <%# <h5><strong><%= link_to artwork.title, artwork_path(artwork)</strong></h5>  %>
+              <%# <strong><p><%= link_to artwork.description, artwork_path(artwork)</strong></p>  %>
+              <%# <p> <%= link_to "Accepter", accepted_booking_path() </p> %>
+              <%# <p><%= link_to "Supprimer ", artwork_path(artwork), method: :delete, data: { confirm: "Are you sure?" } %></strong></p>
+            <%# </div> %>
+          <%# </div> %>
+          <% @artworks.each do |artwork| %>
+           <% artwork.bookings.where(status: "En attente").each do |booking| %>
+              <div class="card-product my-3">
+              <%= cl_image_tag booking.artwork.photo.key %>
+              <div class="card-product-infos">
+                <h5><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong></h5>
+                <p><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
+                <p><%= link_to "Accepter", accepted_booking_path(booking), method: :patch, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong></p>
+                <p><%= link_to "Refuser", rejected_booking_path(booking), method: :patch, data: { confirm: "Etes-vous sûr.e?" }, class: 'btn-ghost-dashboard' %></strong></p>
+
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
+        <% @artworks.each do |artwork| %>
+           <% artwork.bookings.where(status: "Approuvé").each do |booking| %>
+              <div class="card-product my-3">
+              <%= cl_image_tag booking.artwork.photo.key %>
+              <div class="card-product-infos">
+                <h5><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong></h5>
+                <p><strong><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></strong> - du <%= booking.start_date %> au <%= booking.end_date %></p>
+
+                <p><strong><%= booking.status %></strong></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
       <% end %>
     </div>
   </div>

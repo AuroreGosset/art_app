@@ -8,7 +8,8 @@
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin: 15px;
-  border-radius: 5px;
+  border-radius: 15px;
+  background-color: #e6eaf0;
   a {
     text-decoration: none;
     color: inherit;
@@ -17,6 +18,10 @@
 
 .artwork-photo-category {
   position: relative;
+  padding-top: 15px;
+  img {
+  border-radius: 15px;
+  }
   span {
     position: absolute;
     top: 10px;
@@ -75,6 +80,12 @@ img, svg {
   grid-gap: 16px;
 }
 
+.card-grid-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-grid-artiste {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -95,6 +106,18 @@ img, svg {
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-category-profile {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 15px;
+}
+
 
 .card-category-artiste {
   background-size: cover;
@@ -143,3 +166,22 @@ img, svg {
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.artist-card {
+  background: whitesmoke;
+  height: 80vh;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .1);
+  overflow: hidden;
+  width: 725px;
+  margin: auto;
+}
+
+.artist-card-description{
+  padding:0 100px;
+}
+
+.flexbox-artist{
+    display: flex;
+    justify-content: space-evenly;
+  }
